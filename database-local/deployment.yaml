@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trungnq72-postgresql
+spec:
+  selector:
+    matchLabels:
+      app: postgresql
+  template:
+    metadata:
+      labels:
+        app: postgresql
+    spec:
+      containers:
+      - name: postgresql
+        image: postgres:latest
+        env:
+        - name: POSTGRES_DB
+          value: trungnq72-database
+        - name: POSTGRES_USER
+          value: trungnq72-user
+        - name: POSTGRES_PASSWORD
+          value: trungnq72-password
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: trungnq72-postgresql-storage
+      volumes:
+      - name: trungnq72-postgresql-storage
+        persistentVolumeClaim:
+          claimName: trungnq72-postgresql-pvc
