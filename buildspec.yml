@@ -11,7 +11,7 @@ phases:
       - echo Building the Docker image...
       - ls -al analytics   # List all files in the analytics directory
       - cat analytics/Dockerfile   # Print the contents of the Dockerfile
-      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG .
+      - docker build -t $IMAGE_REPO_NAME:$IMAGE_TAG ./analytics
       - docker tag $IMAGE_REPO_NAME:$IMAGE_TAG $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG
   post_build:
     commands:
