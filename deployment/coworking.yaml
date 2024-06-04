@@ -30,7 +30,7 @@ spec:
     spec:
       containers:
       - name: trungnq72-coworking
-        image: <DOCKER_IMAGE_URI_FROM_ECR>
+        image: 881249208152.dkr.ecr.us-east-1.amazonaws.com/trungnq72-containers-repository:latest
         imagePullPolicy: IfNotPresent
         livenessProbe:
           httpGet:
