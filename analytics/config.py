@@ -4,9 +4,9 @@ import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 
-db_username = os.environ.get("DB_USERNAME", "trungnq72-user")
-db_password = os.environ.get("DB_PASSWORD", "trungnq72-password")
-db_host = os.environ.get("DB_HOST", "host.docker.internal")
+db_username = os.environ["DB_USERNAME"]
+db_password = os.environ["DB_PASSWORD"]
+db_host = os.environ.get("DB_HOST", "127.0.0.1")
 db_port = os.environ.get("DB_PORT", "5433")
 db_name = os.environ.get("DB_NAME", "trungnq72-database")
 
