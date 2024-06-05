@@ -1,23 +1,12 @@
 apiVersion: v1
-kind: Service
-metadata:
-  name: postgres-service
-spec:
-  ports:
-  - port: 5433
-    targetPort: 5433
-  selector:
-    app: postgres
----
-apiVersion: v1
 kind: ConfigMap
 metadata:
   name: trungnq72-config-map
 data:
-  DB_NAME: trungnq72-database
-  DB_USER: trungnq72-user
-  DB_HOST: postgres-service
-  DB_PORT: "5433"
+  DB_NAME: "trungnq72-database"
+  DB_USERNAME: "trungnq72-user"
+  DB_HOST: "trungnq72-postgresql-service"
+  DB_PORT: "5432"
 ---
 apiVersion: v1
 kind: Secret

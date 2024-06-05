@@ -3,9 +3,9 @@ kind: PersistentVolumeClaim
 metadata:
   name: trungnq72-postgresql-pvc
 spec:
-  storageClassName: hostpath
+  storageClassName: gp2
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 3Gi
+      storage: 1Gi

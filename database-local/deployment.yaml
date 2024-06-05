@@ -5,14 +5,14 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: postgresql
+      app: trungnq72-postgresql
   template:
     metadata:
       labels:
-        app: postgresql
+        app: trungnq72-postgresql
     spec:
       containers:
-      - name: postgresql
+      - name: trungnq72-postgresql
         image: postgres:latest
         env:
         - name: POSTGRES_DB
@@ -20,7 +20,10 @@ spec:
         - name: POSTGRES_USER
           value: trungnq72-user
         - name: POSTGRES_PASSWORD
-          value: trungnq72-password
+          valueFrom:
+            secretKeyRef:
+              name: trungnq72-secret
+              key: DB_PASSWORD
         ports:
         - containerPort: 5432
         volumeMounts:

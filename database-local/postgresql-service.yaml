@@ -1,10 +1,10 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: postgresql-service
+  name: trungnq72-postgresql-service
 spec:
   ports:
   - port: 5432
     targetPort: 5432
   selector:
-    app: postgresql
+    app: trungnq72-postgresql

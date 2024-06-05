@@ -5,7 +5,7 @@ metadata:
 spec:
   type: LoadBalancer
   selector:
-    service: trungnq72-coworking
+    service: trungnq72-coworking-postgres
   ports:
   - name: "5153"
     protocol: TCP
@@ -15,18 +15,18 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: trungnq72-coworking
+  name: trungnq72-coworking-postgres
   labels:
     name: trungnq72-coworking
 spec:
   replicas: 1
   selector:
     matchLabels:
-      service: trungnq72-coworking
+      service: trungnq72-coworking-postgres
   template:
     metadata:
       labels:
-        service: trungnq72-coworking
+        service: trungnq72-coworking-postgres
     spec:
       containers:
       - name: trungnq72-coworking
