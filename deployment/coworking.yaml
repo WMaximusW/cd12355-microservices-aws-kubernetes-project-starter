@@ -53,4 +53,11 @@ spec:
             secretKeyRef:
               name: trungnq72-secret
               key: DB_PASSWORD
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+          limits:
+            memory: "512Mi"
+            cpu: "1000m"
       restartPolicy: Always

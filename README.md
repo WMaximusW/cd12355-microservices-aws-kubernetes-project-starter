@@ -197,3 +197,22 @@ Please provide up to 3 sentences for each suggestion. Additional content in your
 #       So that, you can continue to deploy codes anytime you want.
 # - For applying the configures. 
 #       You can edit the yaml as you need, then using the command: kubectl apply -f {file_name}.yaml
+
+
+# Stand-Out
+# Specify reasonable Memory and CPU allocation in the Kubernetes deployment configuration
+# replicas: 1
+# memory: 256Mi
+# cpu: 500m (0,5 core)
+# limit: 512Mi
+# cpu: 1000m (1 core)
+
+# In your README, specify what AWS instance type would be best used for the application? Why?
+#   In this pratice, i'm using the EC2 (3). But we can use the lambdra for this. Because its a serveless so that the pricing is much cheaper than the # EC2. But you need to define the requirement.
+#       If the codebuild is long then the EC2 is the one. 3Gib memory, 2vCPus.
+#       If the codebuild is short then The lambra is much more better performance.
+
+# In your README, provide your thoughts on how we can save on costs?
+# 1. You need to ensure the right EC2 for your workload. You can use Auto Scalin group to adjust
+# 2. You can use Spot instances for the tasks is not critical.
+# 3. Using cache for building the image in codebuild for reducing the time compute.
